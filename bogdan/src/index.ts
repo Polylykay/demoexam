@@ -10,19 +10,30 @@ app.use(express.json());
 
 AppDataSource.initialize()
   .then(async () => {
+    // Создание нового пользователя
     app.post("/create/user", async (req: Request, res: Response) => {
       try {
         const { login, password } = req.body;
-
+        // Проверяем, существует ли пользователь с таким логином
+        const existingUser = await AppDataSource.manager.findOne(User, {
+          where: { login },
+        });
+        // Если пользователь существует, возвращаем ошибку
+        if (existingUser) {
+          return res
+            .status(400)
+            .json({ error: "User with this login already exists" });
+        }
+        // Создаем нового пользователя
         const newUser = new User();
         newUser.login = login;
         newUser.password = password;
         newUser.role = "user";
-
+        // Сохраняем пользователя в базе данных
         await AppDataSource.manager.save(newUser);
-
         res.status(201).json({ message: "User created successfully" });
       } catch (error) {
+        console.error("Error:", error);
         res.status(500).json({ error: "Internal server error" });
       }
     });
