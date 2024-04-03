@@ -1,7 +1,14 @@
-# Awesome Project Build with TypeORM
+# Инструкция для запуска проекта
 
-Steps to run this project:
-
-1. Run `npm i` command
-2. Setup database settings inside `data-source.ts` file
-3. Run `npm start` command
+1. Установка всех зависимостей
+```sh
+$ npm ic
+```
+2. Запуск контейнера с базой данных
+```sh
+$ docker-compose up -d
+```
+3. Запуск бекенда приложения
+```sh
+$ npm run start
+```
