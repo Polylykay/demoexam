@@ -1,0 +1,23 @@
+<div class="d-flex w-100 h-100 justify-content-center align-items-center">
+    <div class="registration-window">
+        <h2 class="text-align-center">Registration</h2>
+        <div class="registration-window__input-wrapper">
+            <app-input [value]="item.email" [placeholder]="'email'" (valueChange)="item.email = $event"></app-input>
+        </div>
+        <div class="registration-window__input-wrapper">
+            <app-input [value]="item.password" [placeholder]="'Password'"  [type]="'password'" (valueChange)="item.password = $event"></app-input>
+        </div>
+        <div class="registration-window__input-wrapper">
+            <app-input [value]="item.fio"  [placeholder]="'FIO'"  (valueChange)="item.fio = $event"></app-input>
+        </div>
+        <div class="registration-window__input-wrapper">
+            <app-input [value]="item.phoneNumber"  [placeholder]="'Phone number'"  [type]="'tel'" (valueChange)="item.phoneNumber = $event"></app-input>
+        </div>
+        <div class="registration-window__input-wrapper">
+            <app-input [value]="item.email" [placeholder]="'Email'"  [type]="'email'" (valueChange)="item.email = $event"></app-input>
+        </div>
+        <div class="d-flex justify-content-center">
+            <button (click)="register()">Register</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="d-flex w-100 h-100 justify-content-center align-items-center">
+    <div class="create-application">
+        <h2 class="text-align-center">Арендовать авто</h2>
+        <div class="create-application__input-wrapper">
+            <app-input [value]="item.bookingDate" [placeholder]="'Дата для аренды'" (valueChange)="item.bookingDate = $event"></app-input>
+        </div>
+        <select>
+            <option>Пункт 1</option>
+            <option>Пункт 2</option>
+        </select>
+        <div class="d-flex justify-content-center">
+            <button (click)="createApplication()">Submit</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="d-flex w-100 h-100 justify-content-center align-items-center">
+    <div class="registration-window">
+        <h2 class="text-align-center">Электронная почта</h2>
+        <div class="registration-window__input-wrapper">
+            <app-input [value]="item.email" [placeholder]="'Электронная почта'" (valueChange)="item.email = $event"></app-input>
+        </div>
+        <div class="registration-window__input-wrapper">
+            <app-input [value]="item.password" [placeholder]="'Пароль'"  [type]="'password'" (valueChange)="item.password = $event"></app-input>
+        </div>
+        <div class="d-flex justify-content-center">
+            <button (click)="login()">Логин</button>
+        </div>
+    </div>
+</div>

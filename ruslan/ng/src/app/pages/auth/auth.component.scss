@@ -1,0 +1,14 @@
+.registration-window {
+    border: 1px solid rgb(189, 188, 188);
+    width: 600px;
+    height: 400px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+.registration-window__input-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 12px 0;
+}

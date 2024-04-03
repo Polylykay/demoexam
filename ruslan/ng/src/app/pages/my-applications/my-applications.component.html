@@ -1,0 +1,31 @@
+<div class="applications-page">
+    <h2 class="text-align-center">My applications</h2>
+    <div class="text-align-center">
+        <a  [routerLink]="['/create-application']">+ New Application</a>
+    </div>
+    <table class="applications-table"
+    >
+    <tr
+    *ngFor="let application of applications"
+    >
+        <td>
+
+            {{
+                application.status
+            }}
+        </td>
+        <td>
+
+            {{
+                application.bookingDate
+            }}
+        </td>
+        <td>
+
+            {{
+                application.carName
+            }}
+            </td>
+    </tr>
+    </table>
+</div>
